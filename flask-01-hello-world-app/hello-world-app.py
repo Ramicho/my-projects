@@ -9,7 +9,7 @@ def hello():
 
 @app.route('/second')
 def second():
-    return 'Bize Her Yer Trabzon!!!!'
+    return 'This is the second page!!!!'
 
 
 @app.route('/third/subthird')
@@ -21,4 +21,4 @@ def forth(id):
     return f'Id number of this page is {id}'
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=2000) # normalde port bilgisi yazılmazsa localhost:5000 den açar.
