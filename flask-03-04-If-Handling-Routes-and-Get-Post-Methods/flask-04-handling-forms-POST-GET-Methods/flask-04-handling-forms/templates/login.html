@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login Page</title>
+    <style>
+        .head{
+            background-color: aqua;
+            font-family: 'Lobster', cursive;
+        }
+        .head1{
+            background-color: rgb(80, 76, 87);
+            color: blanchedalmond;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="head">Welcome to Login Page</h1>
+    <form action="#" method="POST">
+        <p>
+            <label class="head" for="name">Name:</label>
+            <input class="head1" type="text" name="username" id="name">
+        </p>
+        <p>
+            <label class="head" for="pswd">Password:</label>
+            <input class="head1" type="password" name="password" id="pswdid">
+        </p>
+        <p><input class="head1" type="submit" value="Login"></p>
+
+        {% if control %}
+        <h2 class="head">Hi {{ user }}, Welcome to login page! your password is wrong, please try again </h2>
+        {% endif %}
+    </form>
+</body>
+
+</html>
