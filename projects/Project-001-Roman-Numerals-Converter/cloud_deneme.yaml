@@ -1,0 +1,72 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: |
+  Decimal to Roman numeral convertor flask server with aws cloudformation
+
+
+Parameters:
+  LatestAmiId:
+    Type: AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>
+    Default: /aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2
+
+  KeyPair:
+    Description: Select your keypair.
+    Type: AWS::EC2::KeyPair::KeyName
+
+
+
+Resources:
+  SecurityFRC:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Security Group With SSH and HTTP (port:80 and 22) # Required
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+      Tags: 
+        - Key: Name
+          Value: RomanConvertorSecurity
+  
+  CloudInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: !Ref LatestAmiId
+      InstanceType: t2.micro
+
+
+      KeyName: !Ref KeyPair
+
+      SecurityGroupIds:
+        - !GetAtt SecurityFRC.GroupId
+
+      Tags:
+        - Key: Name
+          Value: !Sub Web Server Of ${AWS::StackName}
+
+      UserData: !Base64 |
+        #!/bin/bash
+        yum update -y
+        yum install pyton3 -y
+        pip3 install flask
+        cd /home/ec2-user
+        wget https://raw.githubusercontent.com/Ramicho/my-projects/main/projects/Project-001-Roman-Numerals-Converter/app.py
+        mkdir templates
+        cd templates
+        wget https://raw.githubusercontent.com/Ramicho/my-projects/main/projects/Project-001-Roman-Numerals-Converter/templates/index.html
+        wget https://raw.githubusercontent.com/Ramicho/my-projects/main/projects/Project-001-Roman-Numerals-Converter/templates/result.html
+        cd ..
+        python3 app.py
+        
+
+Outputs:
+  WebSiteDNS:
+    Description: WebSite DNS Name
+    Value: !Sub 
+      - http://${PublicAddress}
+      - PublicAddress: !GetAtt CloudInstance.PublicDnsName
+

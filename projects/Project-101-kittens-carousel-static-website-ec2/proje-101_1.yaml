@@ -1,0 +1,44 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: |
+  Sample template to provision an EC2 Instance with public IP. 
+  
+Resources:
+  project101InstKitie:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-05fa00d4c63e32376
+      InstanceType: t2.micro
+      KeyName: firstkey
+      SecurityGroups:
+        - !Ref project101SecGrp  #!Ref unutma
+      Tags:
+        - Key: name
+          Value: project101
+      UserData: 
+        Fn::Base64: !Sub |
+          #!/bin/bash
+          sudo yum update -y
+          sudo yum install -y httpd
+          sudo systemctl start httpd
+          sudo systemctl enable httpd
+          sudo chmod 777 -R /var/www/html
+          sudo yum install git -y
+          sudo git clone https://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@github.com/Ramicho/my-projects.git
+          sudo cp my-projects/Project-101-kittens-carousel-static-website-ec2/static-web/* ../../var/www/html/
+          sudo systemctl restart httpd
+          exit
+
+  project101SecGrp:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: New Group for port22-80 # Required
+      GroupName: prj101SecurityGroup
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0

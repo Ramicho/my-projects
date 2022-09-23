@@ -1,0 +1,86 @@
+[33mcommit a50541d907af1df6f528f6061f1cbf98ace1d398[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Ramicho <ramazanozkoklu@gmail.com>
+Date:   Tue Sep 6 22:45:20 2022 +0300
+
+    Base64 encoded in kitten-carousel-static-website2.yaml file
+
+[33mcommit 0d4c40518ac8ead8304d82b8d200526928ab7651[m
+Author: Ramicho <ramazanozkoklu@gmail.com>
+Date:   Tue Sep 6 22:23:41 2022 +0300
+
+    yaml errors fixed.
+
+[33mcommit 79dbe6b429a7ed2aa1cec71a11bf89fc8547432e[m
+Author: Ramicho <ramazanozkoklu@gmail.com>
+Date:   Tue Sep 6 22:03:19 2022 +0300
+
+    project added
+
+[33mcommit f83e364e4f5c9eab77f9d03da03e57caae8f59ba[m
+Merge: c041e3f 85e5aa6
+Author: Ramicho <ramazanozkoklu@gmail.com>
+Date:   Sun Sep 4 17:42:58 2022 +0300
+
+    Merge branch 'main' of https://github.com/Ramicho/my-projects
+
+[33mcommit c041e3f2e7511a1ffd993ea030aaac0dc450e087[m
+Author: Ramicho <ramazanozkoklu@gmail.com>
+Date:   Sun Sep 4 17:42:37 2022 +0300
+
+    my-project added
+
+[33mcommit 85e5aa6be58d2facb4419935587a26f5efe3e27c[m
+Author: Ramo <110250261+Ramicho@users.noreply.github.com>
+Date:   Sun Sep 4 15:06:26 2022 +0300
+
+    updated
+
+[33mcommit a307121831aee0e8c4a9a9a1ac669bdd11a8539b[m
+Author: Ramo <110250261+Ramicho@users.noreply.github.com>
+Date:   Sun Sep 4 14:04:13 2022 +0300
+
+    Delete project-101.yaml
+    
+    not necessary
+
+[33mcommit 3e1893d5b23fb0d2e2dd06beaa4c18cfe8045b03[m
+Author: Ramicho <ramazanozkoklu@gmail.com>
+Date:   Sun Sep 4 12:20:04 2022 +0300
+
+    ok
+
+[33mcommit 472dbc50f97428543fff26a0230737735546775b[m
+Author: Ramicho <ramazanozkoklu@gmail.com>
+Date:   Sat Sep 3 20:07:21 2022 +0300
+
+    static web project added
+
+[33mcommit f0d4f699544438a85c7fee27812b898bb36767a8[m
+Author: Ramcho <ramazanozkoklu@gmail.com>
+Date:   Sun Aug 28 21:40:31 2022 +0300
+
+    bugs fixed
+
+[33mcommit 324621b70b48c74bdc3b5a130a01018576959fb7[m
+Author: Ramcho <ramazanozkoklu@gmail.com>
+Date:   Sun Aug 28 20:31:41 2022 +0300
+
+    flask-03 and 04 added, HTML status codes file copied.
+
+[33mcommit c165a7650a7ce87528f2c1a0c6b514ca1b78f19d[m
+Author: Ramcho <ramazanozkoklu@gmail.com>
+Date:   Thu Aug 11 12:58:39 2022 +0300
+
+    rakamlar değiştirildi, hello-world.py ye port 2000 eklendi.
+
+[33mcommit 6e5f39662effbc35ab60abc43e2f0eee7dfd24a2[m
+Author: Ramcho <ramazanozkoklu@gmail.com>
+Date:   Wed Aug 10 22:43:54 2022 +0300
+
+    flask-01 and flask-02 added
+
+[33mcommit 1a28944789a37a1e39197c31233d37d1a89557b0[m
+Author: Ramo <110250261+Ramicho@users.noreply.github.com>
+Date:   Wed Aug 10 20:14:42 2022 +0300
+
+    Initial commit
